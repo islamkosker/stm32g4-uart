@@ -45,7 +45,7 @@ DMA_HandleTypeDef hdma_lpuart1_rx;
 DMA_HandleTypeDef hdma_lpuart1_tx;
 
 /* USER CODE BEGIN PV */
-
+extern void app(void);
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -94,7 +94,7 @@ int main(void)
   MX_DMA_Init();
   MX_LPUART1_UART_Init();
   /* USER CODE BEGIN 2 */
-
+  app();
   /* USER CODE END 2 */
 
   /* Infinite loop */

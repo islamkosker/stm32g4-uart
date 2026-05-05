@@ -4,7 +4,7 @@
  * @author islamkosker (https://github.com/islamkosker)
  * @date 2026-04-28 21:44
  * @version 1.0.0
- * @copyright Copyright (c) 2026 İslam Köşker. All rights reserved.
+ * @copyright Copyright (c) 2026 İslam Köşker. 
  */
 
 #ifndef APP_PROTOCOL_H

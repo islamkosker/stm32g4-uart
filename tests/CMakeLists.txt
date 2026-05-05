@@ -14,8 +14,7 @@ add_executable(unit_tests
 
     app/protocol/test_protocol.c
 
-    app/mocks/interface_stubs.c
-    app/mocks/uart_mocks.c
+    app/mocks/protocol_uart_tx_stub.c
 )
 
 target_sources(unit_tests PRIVATE
@@ -26,9 +25,8 @@ target_include_directories(unit_tests PRIVATE
     ${CMAKE_SOURCE_DIR}/tests/app/mocks/
     ${CMAKE_SOURCE_DIR}/tests/app/common/
 
-   
     ${CMAKE_SOURCE_DIR}/app/protocol/inc/
-    ${CMAKE_SOURCE_DIR}/app/interface/
+    ${CMAKE_SOURCE_DIR}/app/interface/uart/inc/
 
 
     ${CMAKE_SOURCE_DIR}/unity/
