@@ -4,13 +4,14 @@ set(CMAKE_SYSTEM_PROCESSOR          arm)
 set(CMAKE_C_COMPILER_ID GNU)
 set(CMAKE_CXX_COMPILER_ID GNU)
 
-# Some default GCC settings
-# arm-none-eabi- must be part of path environment
+
 if(WIN32)
     set(COMPILER_PATH   "C:/compiler/arm/bin/")
-    set(EXT ".exe")
+    set(EXT             ".exe")
+
 else()
     set(COMPILER_PATH   "")  
+
 endif()
 
 set(TOOLCHAIN_PREFIX                ${COMPILER_PATH}arm-none-eabi-)

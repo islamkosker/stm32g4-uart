@@ -65,14 +65,13 @@ bool interface_uart_send(const uint8_t* data, size_t len)
     }
     __enable_irq();
 
-    return !full; // false dönerse caller veri kaybını bilir
+    return !full;
 }
 
 void interface_uart_poll_tx(void)
 {
     if (tx_state == UART_TX_BUSY)
     {
-        // Timeout koruması
         if ((HAL_GetTick() - tx_start_tick) >= UART_TX_TIMEOUT_MS)
         {
             HAL_UART_AbortTransmit(&INTERFACE_UART);

@@ -8,28 +8,30 @@ set(CMAKE_CXX_COMPILER_ID GNU)
 if(WIN32)
     set(COMPILER_PATH   "C:/compiler/gcc/bin/")
     set(EXT             ".exe")
+
 else()
     set(COMPILER_PATH   "") 
     set(EXT             "")
     set(CMAKE_SYSTEM_NAME Linux)
+
 endif()
 
-set(TOOLCHAIN_PREFIX    ${COMPILER_PATH})
+set(TOOLCHAIN_PREFIX        ${COMPILER_PATH})
 
 
-set(CMAKE_C_COMPILER   ${TOOLCHAIN_PREFIX}gcc${EXT})
-set(CMAKE_CXX_COMPILER ${TOOLCHAIN_PREFIX}g++${EXT})
+set(CMAKE_C_COMPILER        ${TOOLCHAIN_PREFIX}gcc${EXT})
+set(CMAKE_CXX_COMPILER      ${TOOLCHAIN_PREFIX}g++${EXT})
 
 
 # Native executable
-set(CMAKE_EXECUTABLE_SUFFIX ".exe")
+set(CMAKE_EXECUTABLE_SUFFIX ${EXT})
 
 # Try compile fix
 set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
 
 set(COMMON_FLAGS "-Wall -Wextra -Wpedantic")
 
-# Debug / Release
+# Debug / Release / Test
 set(CMAKE_C_FLAGS_DEBUG   "-O0 -g3")
 set(CMAKE_C_FLAGS_RELEASE "-O2")
 
