@@ -5,12 +5,20 @@ set(CMAKE_SYSTEM_PROCESSOR x86_64)
 set(CMAKE_C_COMPILER_ID GNU)
 set(CMAKE_CXX_COMPILER_ID GNU)
 
-# GCC path
-set(COMPILER_PATH "C:/compiler/gcc/bin/")
+if(WIN32)
+    set(COMPILER_PATH   "C:/compiler/gcc/bin/")
+    set(EXT             ".exe")
+else()
+    set(COMPILER_PATH   "") 
+    set(EXT             "")
+    set(CMAKE_SYSTEM_NAME Linux)
+endif()
+
 set(TOOLCHAIN_PREFIX    ${COMPILER_PATH})
 
-set(CMAKE_C_COMPILER   "${TOOLCHAIN_PREFIX}gcc.exe")
-set(CMAKE_CXX_COMPILER "${TOOLCHAIN_PREFIX}g++.exe")
+
+set(CMAKE_C_COMPILER   ${TOOLCHAIN_PREFIX}gcc${EXT})
+set(CMAKE_CXX_COMPILER ${TOOLCHAIN_PREFIX}g++${EXT})
 
 
 # Native executable

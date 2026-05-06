@@ -6,15 +6,21 @@ set(CMAKE_CXX_COMPILER_ID GNU)
 
 # Some default GCC settings
 # arm-none-eabi- must be part of path environment
-set(COMPILER_PATH                   "C:/compiler/arm/bin/") 
+if(WIN32)
+    set(COMPILER_PATH   "C:/compiler/arm/bin/")
+    set(EXT ".exe")
+else()
+    set(COMPILER_PATH   "")  
+endif()
+
 set(TOOLCHAIN_PREFIX                ${COMPILER_PATH}arm-none-eabi-)
 
-set(CMAKE_C_COMPILER                ${TOOLCHAIN_PREFIX}gcc.exe)
+set(CMAKE_C_COMPILER                ${TOOLCHAIN_PREFIX}gcc${EXT})
 set(CMAKE_ASM_COMPILER              ${CMAKE_C_COMPILER})
-set(CMAKE_CXX_COMPILER              ${TOOLCHAIN_PREFIX}g++.exe)
-set(CMAKE_LINKER                    ${TOOLCHAIN_PREFIX}g++.exe)
-set(CMAKE_OBJCOPY                   ${TOOLCHAIN_PREFIX}objcopy.exe)
-set(CMAKE_SIZE                      ${TOOLCHAIN_PREFIX}size.exe)
+set(CMAKE_CXX_COMPILER              ${TOOLCHAIN_PREFIX}g++${EXT})
+set(CMAKE_LINKER                    ${TOOLCHAIN_PREFIX}g++${EXT})
+set(CMAKE_OBJCOPY                   ${TOOLCHAIN_PREFIX}objcopy${EXT})
+set(CMAKE_SIZE                      ${TOOLCHAIN_PREFIX}size${EXT})
 
 set(CMAKE_EXECUTABLE_SUFFIX_ASM     ".elf")
 set(CMAKE_EXECUTABLE_SUFFIX_C       ".elf")

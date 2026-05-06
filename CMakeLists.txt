@@ -34,6 +34,7 @@ enable_language(C ASM)
 message(STATUS "Build Type: ${CMAKE_BUILD_TYPE}")
 message(STATUS "Build_APP: ${BUILD_APP}")
 message(STATUS "Build_TEST: ${BUILD_TEST}")
+message(STATUS "System: ${CMAKE_SYSTEM_NAME}")
 
 option(BUILD_APP "Building for app firmware" ON)
 option(BUILD_TEST "Building for unit test" OFF)
